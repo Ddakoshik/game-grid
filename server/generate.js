@@ -9,7 +9,7 @@ for (var i = 1; i<= 100; i++) {
     category: getCategoryId(),
     name: faker.commerce.productName(),
     description: faker.lorem.sentences(),
-    imageUrl: "https://source.unsplash.com/1600x900/?product",
+    imageUrl: `https://loremflickr.com/320/240?random=${i}`,
     quantity: faker.datatype.number()
   });
 }

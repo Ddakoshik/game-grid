@@ -1,0 +1,8 @@
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
+    grid-gap: 16px;
+    max-height: rem(130px);
+    padding: 24px;
+}

@@ -1,4 +1,6 @@
-<div>
-    <game-tile *ngFor="let game of gamesList"
-        [data]="game"></game-tile>
+
+<div class="games-grid">
+
+    <app-game-tile *ngFor="let game of gamesList"
+    [data]="game"></app-game-tile>
 </div>
