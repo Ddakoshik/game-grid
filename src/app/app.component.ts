@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, ActivationEnd, Router } from '@angular/router';
+import { ActivationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription } from 'rxjs';
 import { switchMap, map, filter } from 'rxjs/operators';
@@ -13,12 +13,12 @@ export const defaulteLanguage = 'en'; // TODO move to constant
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-  heroes$: Observable<any>;
   selectedLanguage = defaulteLanguage;
   subscription: Subscription;
 
-  translation$ = this.translate.onLangChange.pipe(
+  translation$ = this.translate.onLangChange.pipe( // TODO: refactor this part Has redirect bug
     switchMap(({ lang }) => {
+      debugger
       this.router.navigate(['grid-of-games', lang]);
       return this.translate.getTranslation(lang);
     }
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit, OnDestroy {
       }),
       map((e: ActivationEnd) => {
         const languageCode = e.snapshot.params.leng;
-        this.changeLanguage(languageCode);
+        this.setLanguage(languageCode);
       })
     ).subscribe();
   }
@@ -51,8 +51,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  setLanguage(languageCode: string): void {
+    this.translate.use(languageCode);
+    this.selectedLanguage = languageCode;
+  }
+
   changeLanguage(languageCode: string): void {
     this.translate.use(languageCode);
     this.selectedLanguage = languageCode;
+    this.router.navigate(['grid-of-games', languageCode]);
   }
 }

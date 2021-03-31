@@ -31,6 +31,8 @@ import {
 } from '@larscom/ngx-translate-module-loader';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -57,13 +59,16 @@ export function ModuleHttpLoaderFactory(http: HttpClient): ModuleTranslateLoader
     FooterComponent,
     GridFoGamesConteinerComponent,
     NavBarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchInputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     TranslateModule.forRoot({
       loader: {

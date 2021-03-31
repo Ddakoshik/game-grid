@@ -1,0 +1,8 @@
+<mat-form-field [floatLabel]="'always'" class="search">
+    <mat-label></mat-label>
+    <input matInput #searchInput
+            autocomplete="off"
+            placeholder="{{'SearchPlaceholder' | translate}}"
+            [formControl]="searchFormControl">
+    <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>

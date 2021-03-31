@@ -1,6 +1,11 @@
+<div *ngIf="gamesList?.length">
+    <p>{{'TotalItems' | translate}} - {{gamesList?.length}}</p>
+    <div class="games-grid">
+        <app-game-tile *ngFor="let game of gamesList"
+        [data]="game"></app-game-tile>
+    </div>
+</div>
 
-<div class="games-grid">
-
-    <app-game-tile *ngFor="let game of gamesList"
-    [data]="game"></app-game-tile>
+<div *ngIf="!gamesList?.length">
+    <h2>{{'NoData' | translate}}</h2>
 </div>

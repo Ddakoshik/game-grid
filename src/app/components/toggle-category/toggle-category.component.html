@@ -1,1 +1,5 @@
-<p>toggle-category works!</p>
+<div class="category-tile"
+    [ngClass]="{'active-tile': category.id === selectedCategoryId}"
+    *ngFor="let category of categoriesList" (click)="onSelectedCategory(category.id)">
+    <p>{{category.name}}</p>
+</div>

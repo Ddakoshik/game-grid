@@ -1,4 +1,6 @@
 {
-    "TITLE": "Привет ngx-translate!",
-    "CHANGE_LANGUAGE" : "Изменить язик"
-  }
+    "SearchPlaceholder": "Поиск",
+    "Games": "Игры",
+    "TotalItems": "Всего елементов",
+    "NoData": "Нет даных"
+}

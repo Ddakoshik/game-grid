@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    justify-content: center;
+
+    .category-tile {
+        border: 1px solid  beige;
+        background-color: rgb(241, 241, 112);
+        z-index: 1;
+        width: 130px;
+        height: 200px;
+        margin-left: -60px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        
+        &.active-tile,
+        &:hover {
+            margin-top: -30px;
+            transition: 0.3s;
+            transform: scale(1.1);
+            background-color: rgb(219, 219, 43);
+            z-index: 10;
+        }
+    }
+}

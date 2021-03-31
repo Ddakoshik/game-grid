@@ -1,4 +1,6 @@
 {
-    "TITLE": "Hello ngx-translate!",
-    "CHANGE_LANGUAGE" : "Change language"
-  }
+    "SearchPlaceholder": "Search",
+    "Games": "Games",
+    "TotalItems": "Total items",
+    "NoData": "No Data"
+}

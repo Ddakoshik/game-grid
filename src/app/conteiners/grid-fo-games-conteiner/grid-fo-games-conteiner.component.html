@@ -1,3 +1,6 @@
 
+<app-search-input (valueChanged)="onSearch($event)"></app-search-input>
+
+<app-toggle-category [categoriesList]="categoriesList" [selectedCategoryId]="selectedCategoryId" (selectCategory)="onSelectCategory($event)"></app-toggle-category>
 
 <app-grid-of-games [gamesList]="gamesList"></app-grid-of-games>

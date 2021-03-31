@@ -5,4 +5,15 @@
     grid-gap: 16px;
     max-height: rem(130px);
     padding: 24px;
+    
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media  (max-width: 500px) {
+        grid-template-columns: 1fr;
+    }
 }
+
+
+

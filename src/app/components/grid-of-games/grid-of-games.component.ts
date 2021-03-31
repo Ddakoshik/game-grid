@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Game } from '../../conteiners/grid-fo-games-conteiner/grid-fo-games-conteiner.component';
 
 @Component({
   selector: 'app-grid-of-games',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GridOfGamesComponent implements OnInit {
 
-  @Input() gamesList: any[];
+  @Input() gamesList: Game[];
 
   constructor() { }
 
